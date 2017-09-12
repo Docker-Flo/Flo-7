@@ -3,7 +3,7 @@
 # Environment: Java
 # Minimum Panel Version: 0.6.0
 # ----------------------------------
-FROM openjdk:7-jdk-alpine
+FROM openjdk:7-jre-alpine
 
 MAINTAINER Fonix Hardcastle, <me@fonix.online>
 
