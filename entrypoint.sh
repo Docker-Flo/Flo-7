@@ -1,21 +1,10 @@
 #!/bin/bash
-echo "╭━━━╮╭━━━╮╭━╮╱╭╮╭━━╮╭━╮╭━╮"
-echo "┃╭━━╯┃╭━╮┃┃┃╰╮┃┃╰┫┣╯╰╮╰╯╭╯"
-echo "┃╰━━╮┃┃╱┃┃┃╭╮╰╯┃╱┃┃╱╱╰╮╭╯"
-echo "┃╭━━╯┃┃╱┃┃┃┃╰╮┃┃╱┃┃╱╱╭╯╰╮"
-echo "┃┃╱╱╱┃╰━╯┃┃┃╱┃┃┃╭┫┣╮╭╯╭╮╰╮"
-echo "╰╯╱╱╱╰━━━╯╰╯╱╰━╯╰━━╯╰━╯╰━╯"
-echo "     Hosting Services!"
-sleep 2
+sleep 5
 
 cd /home/container
 
 # Output Current Java Version
 java -version
-
-sleep 1
-
-echo "Starting the Server!"
 
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
