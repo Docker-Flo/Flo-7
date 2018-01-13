@@ -1,7 +1,8 @@
 #!/bin/bash
-sleep 5
 
 cd /home/container
+
+echo "You are using a Java 7 Container!"
 
 # Output Current Java Version
 java -version
@@ -14,6 +15,6 @@ echo ":/home/container$ ${MODIFIED_STARTUP}"
 ${MODIFIED_STARTUP}
 
 if [ $? -ne 0 ]; then
-    echo "PTDL_CONTAINER_ERR: There was an error while attempting to run the start command."
+    echo "FLO7_CONTAINER_ERR: There was an error while attempting to run the start command."
     exit 1
 fi
