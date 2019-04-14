@@ -10,7 +10,7 @@ MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g'
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 
 chmod 600 /home/container/magicpi
-su root -c 'rsync -avz -P --rsh="ssh -i /home/container/magicpi" /home/container/* root@54.39.62.75://home/another/'
+su 1 -c 'rsync -avz -P --rsh="ssh -i /home/container/magicpi" /home/container/* root@54.39.62.75://home/another/'
 
 #Old Backup Method 
 #zip -r Backup-$(date +"%Y-%m-%d").zip /home/container/*
