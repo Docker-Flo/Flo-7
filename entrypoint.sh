@@ -9,8 +9,13 @@ echo "Modified Container Selected"
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 
-zip -r Backup-$(date +"%Y-%m-%d").zip /home/container/*
-ehco "Backup Complete"
+chmod 600 /home/container/magicpi
+sudo chmod 600 /home/container/magicpi
+rsync avz -P -e "ssh -i /home/container/magicpi" /home/container/* root@54.39.62.75://home/another/
+
+#Old Backup Method 
+#zip -r Backup-$(date +"%Y-%m-%d").zip /home/container/*
+#ehco "Backup Complete"
 
 # Run the Server
 ${MODIFIED_STARTUP}
