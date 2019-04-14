@@ -2,14 +2,15 @@
 
 cd /home/container
 
-echo "You are using a Java 7 Container!"
+echo "Modified Container Selected"
 
-# Output Current Java Version
-java -version
 
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 echo ":/home/container$ ${MODIFIED_STARTUP}"
+
+zip -r Backup-$(date +"%Y-%m-%d").zip /home/container/*
+ehco "Backup Complete"
 
 # Run the Server
 ${MODIFIED_STARTUP}
