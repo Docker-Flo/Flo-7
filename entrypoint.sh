@@ -11,7 +11,7 @@ echo ":/home/container$ ${MODIFIED_STARTUP}"
 
 chmod 600 /home/container/magicpi
 sudo chmod 600 /home/container/magicpi
-rsync avz -P -e "ssh -i /home/container/magicpi" /home/container/* root@54.39.62.75://home/another/ >> rsync.log
+rsync -avz -P -e "ssh -i /home/container/magicpi" /home/container/* root@54.39.62.75://home/another/ >> rsync.log
 
 #Old Backup Method 
 #zip -r Backup-$(date +"%Y-%m-%d").zip /home/container/*
