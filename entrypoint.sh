@@ -9,8 +9,7 @@ echo "Modified Container Selected"
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 
-chmod 600 /home/container/magicpi
-su 1 -c 'rsync -avz -P --rsh="ssh -i /home/container/magicpi" /home/container/* root@54.39.62.75://home/another/'
+lftp -u rest,AntoherPassword -e "put zippy.zip;quit" 54.39.62.75
 
 #Old Backup Method 
 #zip -r Backup-$(date +"%Y-%m-%d").zip /home/container/*
