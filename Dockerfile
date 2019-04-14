@@ -9,7 +9,7 @@ MAINTAINER Fonix Hardcastle, <me@fonix.online>
 
 RUN apk update \
     && apk upgrade \
-    && apk add --no-cache --update curl ca-certificates openssl git tar bash sqlite \
+    && apk add --no-cache --update curl ca-certificates openssl git zip tar bash sqlite \
     && adduser -D -h /home/container container
 
 USER container
