@@ -4,16 +4,13 @@ cd /home/container
 
 echo "Modified Container Selected"
 
+echo "This container was Made by Fonix and is not supported by the Pterodactl Group.."
+sleep 3
 
-# Replace Startup Variables
+
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 
-#Old Backup Method 
-#zip -r zippy.zip /home/container/*
-#ehco "Backup Complete"
-
-#lftp -u rest,AntoherPassword -e "put zippy.zip;quit" 54.39.62.75
 
 ${MODIFIED_STARTUP}
 
